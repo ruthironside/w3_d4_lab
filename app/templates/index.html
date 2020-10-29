@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <title>{{title}} - Events List</title>
+    </head>
+    <body>
+        
+    
+    <h1>Events List</h1>
+
+    <form action="/create-event" method="post">
+        <label for="name_of_event">Event name</label>
+        <input type="text" name="title" id="title">
+        <input type="submit" value="Add event to planner">
+    </form>
+
+    {% for event in events %}
+        <div>
+            <p>
+                {{event.name_of_event}}
+                
+            </p>
+        </div>
+        {% endfor %}
+
+    
+    </body>
+
+
+
+</html>
